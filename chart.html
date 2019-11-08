@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Organization Chart Plugin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.6/css/jquery.orgchart.min.css">
+  <style type="text/css">
+    html,body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      line-height: 1.428571429;
+      color: #333333;
+    }
+
+    #chart-container {
+      /* position: relative;
+      display: inline-block;
+      top: 10px;
+      left: 10px;
+      height: 420px;
+      width: calc(100% - 24px);
+      border: 2px dashed #aaa;
+      border-radius: 5px;
+      overflow: auto;
+      text-align: left; */
+    }
+
+    .orgchart {
+      background-image: none;
+    }
+
+    /* .orgchart .node {
+      width: 200px;
+    } */
+
+    .orgchart .node .title {
+      width: 160px;
+      font-weight: 200;
+      border-radius: 0;
+      text-align: left;
+      border: 1px solid black;
+      background-color: white;
+      color: #555;
+    }
+
+  </style>
+</head>
+<body>
+  <ul id="ul-data" style="display: none;">
+      <li>The GDS Way
+        <ul>
+          <li>About the GDS Way</li>
+          <li>Ways of working
+              <ul><li>how GDS uses quarterly planning</li></ul>
+          </li>
+          <li>Standards
+              <ul>
+                <li>How to build software
+                    <ul>
+                        <li>use continuous delivery</li>
+                        <li>name software products</li>
+                        <li>choosing programming languages</li>
+                        <li>store source code</li>
+                        <li>manage third party software dependancies</li>
+                        <li>optimise frontend performance</li>
+                        <li>track technical debt</li>
+                        <li>test your Ruby code with RSpec</li>
+                        <li>check if a service is ready for production</li>
+                        <li>understand the risks to your service</li>
+                        <li>document architecture decisions</li>
+                    </ul>
+                </li>
+                <li>How to operate services
+                    <ul>
+                        <li>host a service</li>
+                        <li>manage DNS records for your service</li>
+                        <li>monitor your service</li>
+                        <li>configuring operating systems for virtual machines</li>
+                        <li>manage alerts</li>
+                        <li>run a Service Level Indicator (SLI) workshop</li>
+                        <li>send email notifications</li>
+                        <li>store and query logs</li>
+                        <li>do penetration tests</li>
+                        <li>manage access to your third-party service accounts</li>
+                        <li>publish open source code</li>
+                        <li>have effective pull requests</li>
+                        <li>write good commits</li>
+                        <li>use configuration management</li>
+                        <li>run performance tests</li>
+                        <li>use data stores</li>
+                        <li>use a web application firewall (WAF)</li>
+                        <li>[link to Cyber]</li>
+                        <li>[link to Reliability Engineering]</li>
+                    </ul>
+                </li>
+                <li>Incident management
+                    <ul>
+                        <li>GDS provides user support</li>
+                        <li>to manage technical incidents </li>
+                    </ul>
+                </li>
+              </ul>
+          </li>
+          <li>Manuals
+              <ul>
+                  <li>programming language style guides</li>
+                  <li>setting up logging</li>
+                  <li>licensing</li>
+                  <li>how to review code</li>
+                  <li>accessibility</li>
+                  <li>writing READMEs</li>
+              </ul>
+          </li>
+          <li>How to add new guidance
+              <ul>
+                <li>[link to GitHub]</li>
+                <li>[learning about and writing user needs]</li>
+                <li>Submission template</li>
+              </ul>
+          </li>
+          <li>The GDS Way forum
+              <ul><li>Contact the GDS Way forum</li></ul>
+          </li>
+        </ul>
+      </li>
+  </ul>
+  <div id="chart-container"></div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/orgchart/2.1.6/js/jquery.orgchart.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+    $('#chart-container').orgchart({
+      'data' : $('#ul-data'),
+      'direction': 'l2r'
+    });
+
+  });
+  </script>
+  </body>
+</html>
